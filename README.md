@@ -1,3 +1,65 @@
+# Simple React App with Auto Deployment
+
+This is a simple React application with auto-deployment to a Hostinger server.
+
+## Requirements
+
+- Node.js 18 or later
+- npm 8 or later
+
+## Setup Automatic Deployment
+
+To set up automatic deployment using GitHub Actions, follow these steps:
+
+1. **Push this code to a GitHub repository**
+   
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git remote add origin YOUR_GITHUB_REPO_URL
+   git push -u origin main
+   ```
+
+2. **Set up GitHub Secrets**
+   
+   In your GitHub repository, go to Settings > Secrets and Variables > Actions and add these secrets:
+   
+   - `SSH_PRIVATE_KEY`: Your private SSH key for connecting to the server
+   - `KNOWN_HOSTS`: The SSH known hosts entry for your server (run `ssh-keyscan 69.62.78.171` to get this)
+
+3. **First-time SSH Setup**
+   
+   Ensure your SSH key is added to the authorized keys on your Hostinger server:
+   
+   ```bash
+   ssh-copy-id root@69.62.78.171
+   ```
+
+## Manual Deployment
+
+You can also deploy manually using the included deployment script:
+
+```bash
+./deploy.sh
+```
+
+This will build the app and deploy it to your Hostinger server at 69.62.78.171.
+
+## Development
+
+To run the app locally:
+
+```bash
+npm start
+```
+
+To build the app for production:
+
+```bash
+npm run build
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
