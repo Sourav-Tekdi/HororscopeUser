@@ -1,15 +1,13 @@
-import React from 'react';
-import './App.css';
-
+import React from 'react'
+import RoutesComponent from './admin/routes/Routes'
+import { ReactNotifications } from 'react-notifications-component'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Hellooo, React!</h1>
-        <p>Welcome to my simple React application</p>
-      </header>
-    </div>
-  );
+    <>
+      <ReactNotifications />
+      <RoutesComponent />
+    </>
+  )
 }
 
-export default App;
+export default App
