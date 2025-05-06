@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Wallet body -->
+  <rect x="2" y="7" width="20" height="13" rx="2" ry="2" />
+  <!-- Wallet flap -->
+  <path d="M2 7V5C2 4.44772 2.44772 4 3 4H16C17.6569 4 19 5.34315 19 7V7H2Z" />
+  <!-- Wallet strap -->
+  <rect x="16" y="10" width="5" height="4" rx="1" />
+  <!-- Button -->
+  <circle cx="19" cy="12" r="0.8" fill="white" />
+</svg>
