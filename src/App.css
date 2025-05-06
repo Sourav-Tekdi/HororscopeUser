@@ -1,0 +1,139 @@
+#root {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+header {
+  margin-bottom: 1rem;
+}
+
+header h1 {
+  color: #f1c40f;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #e0e0e0;
+}
+
+.zodiac-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.zodiac-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.zodiac-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.zodiac-card.selected {
+  border-color: #f1c40f;
+  box-shadow: 0 0 15px rgba(241, 196, 15, 0.5);
+}
+
+.zodiac-card h3 {
+  color: #f1c40f;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.zodiac-card .dates {
+  color: #e0e0e0;
+  margin-bottom: 0.5rem;
+}
+
+.zodiac-card .element {
+  color: #bbb;
+  font-style: italic;
+}
+
+.horoscope-box {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 2rem;
+  width: 100%;
+  margin-top: 2rem;
+  border-left: 4px solid #f1c40f;
+}
+
+.horoscope-box h2 {
+  color: #f1c40f;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.horoscope-text {
+  color: #e0e0e0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+@media (prefers-color-scheme: light) {
+  header h1 {
+    color: #d35400;
+    text-shadow: none;
+  }
+  
+  header p {
+    color: #333;
+  }
+  
+  .zodiac-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .zodiac-card h3 {
+    color: #d35400;
+  }
+  
+  .zodiac-card .dates {
+    color: #333;
+  }
+  
+  .zodiac-card .element {
+    color: #666;
+  }
+  
+  .zodiac-card.selected {
+    border-color: #d35400;
+    box-shadow: 0 0 15px rgba(211, 84, 0, 0.3);
+  }
+  
+  .horoscope-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-left: 4px solid #d35400;
+  }
+  
+  .horoscope-box h2 {
+    color: #d35400;
+  }
+  
+  .horoscope-text {
+    color: #333;
+  }
+} 
