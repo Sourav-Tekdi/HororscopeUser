@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Login from '../screens/login'
 import Register from '../screens/Register'
 import NotFound from '../../pages/Notfound'
-import Dashboard from '../screens/dashboard'
+import Dashboard from '../screens/Dashboard'
 import AddAstrologer from '../screens/astrologer/AddAstrologer'
 import AllAstrologer from '../screens/astrologer/AllAstrologer'
 import AddProduct from '../screens/product/AddProduct'
@@ -38,9 +38,10 @@ const RoutesComponent = () => {
                 <AuthProvider>
                     <Router basename="/">
                         <Routes>
-                            <Route path="/login" element={<NotProtectedRoute><Login title='Login' /></NotProtectedRoute>} />
-                            <Route path="/register" element={<NotProtectedRoute><Register title="Register" /></NotProtectedRoute>} />
-                            <Route exact path="/" element={<ProtectedRoute><Dashboard title='Dashboard' /></ProtectedRoute>} />
+                            {/* <Route path="/login" element={<NotProtectedRoute><Login title='Login' /></NotProtectedRoute>} />
+                            <Route path="/register" element={<NotProtectedRoute><Register title="Register" /></NotProtectedRoute>} /> */}
+                            <Route exact path="/" element={<Dashboard title="Dashboard" />} />
+{/* 
                             <Route path="/settings" element={<ProtectedRoute><Settings title='Settings' /></ProtectedRoute>} />
 
 
@@ -75,7 +76,7 @@ const RoutesComponent = () => {
 
                             <Route path="/profile" element={<ProtectedRoute><Profile title='Profile' /></ProtectedRoute>} />
                             <Route path="/chat/:id?" element={<ProtectedRoute><Chat title='Chat' /></ProtectedRoute>} />
-                            <Route path="*" element={<NotFound />} />
+                            <Route path="*" element={<NotFound />} /> */}
                         </Routes>
                     </Router>
                 </AuthProvider>
