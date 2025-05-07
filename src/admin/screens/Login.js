@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Slider from 'react-slick';
-import Notification from '../../src/Helpers/Notification';
-import Helpers from '../../src/Helpers/Helpers';
+import Notification from '../../Helpers/Notification';
+import Helpers from '../../Helpers/Helpers';
 import { Link } from "react-router-dom";
 
 const Login = ({ title }) => {

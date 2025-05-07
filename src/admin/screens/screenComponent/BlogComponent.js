@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
-import Helpers from "../../Helpers/Helpers"
-import BlogCard from "../../components/card/BlogCard.js"
+import Helpers from "../../../Helpers/Helpers"
+import BlogCard from "../../../components/card/BlogCard.js"
 import { useLocation, useNavigate } from "react-router-dom"
-import Pagination from "../../components/Pagination"
-import Breadcrum from "../../components/Breadcrum.js"
+import Pagination from "../../../components/Pagination"
+import Breadcrum from "../../../components/Breadcrum.js"
 
 const BlogComponent = ({ title }) => {
     const helpers = Helpers()

@@ -1,35 +1,35 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Login from '../screens/login'
-import Register from '../screens/Register'
-import NotFound from '../../pages/Notfound'
+import Login from '../screens/Login'
+// import Register from '../screens/Register'
+// import NotFound from '../../pages/Notfound'
 import Dashboard from '../screens/Dashboard'
-import AddAstrologer from '../screens/astrologer/AddAstrologer'
-import AllAstrologer from '../screens/astrologer/AllAstrologer'
-import AddProduct from '../screens/product/AddProduct'
-import AllProduct from '../screens/product/AllProduct'
-import ProtectedRoute from '../components/ProtectedRoute'
+// import AddAstrologer from '../screens/astrologer/AddAstrologer'
+// import AllAstrologer from '../screens/astrologer/AllAstrologer'
+// import AddProduct from '../screens/product/AddProduct'
+// import AllProduct from '../screens/product/AllProduct'
+// import ProtectedRoute from '../components/ProtectedRoute'
 import NotProtectedRoute from '../components/NotProtectedRoute'
 import { AuthProvider } from '../context/AuthContext'
 import { NetworkProvider } from '../context/NetworkProvider'
 import { ProfileProvider } from '../context/ProfileContext'
-import Profile from '../screens/profile/Profile'
-import ViewAstrologer from '../screens/astrologer/ViewAstrologer'
-import AllCategory from '../screens/category/AllCategory'
-import AddCategory from '../screens/category/AddCategory'
-import ViewCategory from '../screens/category/ViewCategory'
-import ViewProduct from '../screens/product/ViewProduct'
-import AddPost from '../screens/post/AddPost'
-import AllPost from '../screens/post/AllPost'
-import MyPost from '../screens/post/MyPost'
-import UpdatePost from '../screens/post/UpdatePost'
-import AddFaq from '../screens/faq/AddFaq'
-import AllFaq from '../screens/faq/AllFaq'
-import ViewFaq from '../screens/faq/ViewFaq'
-import AllContact from '../screens/contact/AllContact'
-import Settings from '../screens/settings/Settings'
-import Chat from '../screens/chat/Chat'
-import ViewPost from '../screens/post/ViewPost'
+// import Profile from '../screens/profile/Profile'
+// import ViewAstrologer from '../screens/astrologer/ViewAstrologer'
+// import AllCategory from '../screens/category/AllCategory'
+// import AddCategory from '../screens/category/AddCategory'
+// import ViewCategory from '../screens/category/ViewCategory'
+// import ViewProduct from '../screens/product/ViewProduct'
+// import AddPost from '../screens/post/AddPost'
+// import AllPost from '../screens/post/AllPost'
+// import MyPost from '../screens/post/MyPost'
+// import UpdatePost from '../screens/post/UpdatePost'
+// import AddFaq from '../screens/faq/AddFaq'
+// import AllFaq from '../screens/faq/AllFaq'
+// import ViewFaq from '../screens/faq/ViewFaq'
+// import AllContact from '../screens/contact/AllContact'
+// import Settings from '../screens/settings/Settings'
+// import Chat from '../screens/chat/Chat'
+// import ViewPost from '../screens/post/ViewPost'
 
 const RoutesComponent = () => {
     return (
@@ -38,9 +38,11 @@ const RoutesComponent = () => {
                 <AuthProvider>
                     <Router basename="/">
                         <Routes>
-                            {/* <Route path="/login" element={<NotProtectedRoute><Login title='Login' /></NotProtectedRoute>} />
-                            <Route path="/register" element={<NotProtectedRoute><Register title="Register" /></NotProtectedRoute>} /> */}
-                            <Route exact path="/" element={<Dashboard title="Dashboard" />} />
+                            {/* <Route path="/login" element={<NotProtectedRoute><Login title='Login' /></NotProtectedRoute>} /> */}
+                            {/* <Route path="/register" element={<NotProtectedRoute><Register title="Register" /></NotProtectedRoute>} /> */}
+                            {/* <Route exact path="/" element={<Dashboard title="Dashboard" />} /> */}
+                            <Route exact path="/" element={<NotProtectedRoute><Dashboard title='Dashboard' /></NotProtectedRoute>} />
+
 {/* 
                             <Route path="/settings" element={<ProtectedRoute><Settings title='Settings' /></ProtectedRoute>} />
 

@@ -1,7 +1,7 @@
-import ClientTestimonials from "../../components/ClientTestimonials"
-import DashboardBanner from "../../components/DashboardBanner"
-import LatestPosts from "../../components/LatestPosts"
-import PopularProducts from "../../components/PopularProducts"
+import ClientTestimonials from "../../../components/ClientTestimonials"
+import DashboardBanner from "../../../components/DashboardBanner"
+import LatestPosts from "../../../components/LatestPosts"
+import PopularProducts from "../../../components/PopularProducts"
 import AboutusComponent from "./AboutusComponent"
 import HoroscopeList from "./HoroscopeList"
 import { Link } from 'react-router-dom';

@@ -1,5 +1,5 @@
 import React from 'react'
-import Breadcrum from '../../components/Breadcrum'
+import Breadcrum from '../../../components/Breadcrum'
 
 const AboutusComponent = ({ title }) => {
     return (

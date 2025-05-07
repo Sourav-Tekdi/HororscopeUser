@@ -6049,3 +6049,34 @@ button {
 .headerSvg{
     padding-top: 7px;
 }
+
+/* Horoscope List Styles */
+.as_horoscope_list_wrapper {
+    background-color: #f8f9fa;
+    padding: 40px 0;
+}
+
+.as_horoscope_box {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.as_horoscope_box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.as_horoscope_box h4 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.as_horoscope_box p {
+    color: #666;
+    font-size: 14px;
+    margin: 0;
+}
