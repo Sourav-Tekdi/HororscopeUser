@@ -30,9 +30,11 @@ jobs:
     
     - name: Deploy to Hostinger
       run: |
-        ssh -o StrictHostKeyChecking=no root@69.62.78.171 '
-          cd /root/HororscopeUser && \
-          rm -rf * && \
-          exit
-        '
-        scp -o StrictHostKeyChecking=no -r build/* root@69.62.78.171:/root/HororscopeUser 
+        rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" build/ root@69.62.78.171:/root/HororscopeUser/ 
+
+    - name: Build Docker image
+      run: docker build -t my-react-app .
+      run: docker push my-react-app
+
+    - name: Run Docker container
+      run: docker run -p 8080:80 my-react-app 
