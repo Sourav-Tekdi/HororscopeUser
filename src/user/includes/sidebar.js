@@ -30,7 +30,7 @@ const Sidebar = () => {
             <div className="brand-logo">
                 <Link to="/">
                     <img
-                        src="/admin/assets/images/astroscope.jpeg"
+                    src="/admin/assets/images/astroscope.jpeg"
                         className="logo-icon"
                         alt="logo icon"
                     />

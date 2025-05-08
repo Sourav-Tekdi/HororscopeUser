@@ -36,9 +36,9 @@ jobs:
     
     - name: Deploy to Hostinger
       run: |
-        ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} '
-          cd ${{ secrets.SSH_PATH }} && \
+        ssh -o StrictHostKeyChecking=no root@69.62.78.171 '
+          cd /root/HororscopeUser && \
           rm -rf * && \
           exit
         '
-        scp -o StrictHostKeyChecking=no -r build/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.SSH_PATH }} 
+        scp -o StrictHostKeyChecking=no -r build/* root@69.62.78.171:/root/HororscopeUser 

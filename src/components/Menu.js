@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useProfile } from '../admin/context/ProfileContext';
+import { useProfile } from '../user/context/ProfileContext';
 import Logout from './Logout';
 
 const Menu = ({ hideMenue = false, onClose, isAuthenticated }) => {
@@ -23,7 +23,7 @@ const Menu = ({ hideMenue = false, onClose, isAuthenticated }) => {
                         </button>
                         <div className="profile_details">
                             <img
-                                src={userInfo?.full_profile_pic || '/assets/images/default-avatar.png'}
+                                src={userInfo?.full_profile_pic || '../../public/assets/images/default-avatar.png'}
                                 alt="Profile"
                                 className="profile_image"
                             />

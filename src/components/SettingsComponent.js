@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { useProfile } from '../admin/context/ProfileContext'
-import { useAuth } from '../admin/context/AuthContext';
+import { useProfile } from '../user/context/ProfileContext'
+import { useAuth } from '../user/context/AuthContext';
 import { Link } from 'react-router-dom'
 import Logout from './Logout'
 

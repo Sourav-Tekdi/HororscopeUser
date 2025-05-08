@@ -1,5 +1,5 @@
 import React from 'react'
-import RoutesComponent from './admin/routes/Routes'
+import RoutesComponent from './user/routes/Routes'
 import { ReactNotifications } from 'react-notifications-component'
 function App() {
   return (

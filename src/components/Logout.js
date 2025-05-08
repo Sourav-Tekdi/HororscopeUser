@@ -1,5 +1,5 @@
 import React from 'react'
-import { useAuth } from '../admin/context/AuthContext';
+import { useAuth } from '../user/context/AuthContext';
 import Helpers from '../Helpers/Helpers';
 import Notification from '../Helpers/Notification';
 
