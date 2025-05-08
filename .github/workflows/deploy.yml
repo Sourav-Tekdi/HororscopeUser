@@ -28,20 +28,11 @@ jobs:
       with:
         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
     
-    
     - name: Deploy to Hostinger
       run: |
-        rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" . root@69.62.78.171:/root/HororscopeUser/
         ssh -o StrictHostKeyChecking=no root@69.62.78.171 '
-          cd /root/HororscopeUser &&
-          docker build -t my-react-app . &&
-          (docker stop my-react-app || true) &&
-          (docker rm my-react-app || true) &&
-          docker run -d --name my-react-app -p 80:80 my-react-app
+          cd /root/HororscopeUser && \
+          rm -rf * && \
+          exit
         '
-
-    - name: Build Docker image
-      run: docker build -t my-react-app .
-
-    - name: Run Docker container
-      run: docker run -p 8080:80 my-react-app 
+        scp -o StrictHostKeyChecking=no -r build/* root@69.62.78.171:/root/HororscopeUser 
