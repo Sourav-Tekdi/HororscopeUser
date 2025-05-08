@@ -30,7 +30,7 @@ jobs:
     - name: Deploy to Hostinger
       run: |
         ssh -o StrictHostKeyChecking=no root@69.62.78.171 '
-          cd /root/HororscopeUser && \
+          cd /HororscopeUser && \
           rm -rf * && \
           exit
         '
