@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Helpers from '../../src/Helpers/Helpers'
+import Helpers from '../../../src/Helpers/Helpers'
 import { Link } from 'react-router-dom'
 import ProductCard from './card/ProductCard'
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Helpers from '../Helpers/Helpers'
+import Helpers from '../../Helpers/Helpers'
 import { useNavigate } from 'react-router-dom'
-import Notification from '../Helpers/Notification'
+import Notification from '../../Helpers/Notification'
 const Faq = () => {
     const helpers = Helpers()
     const navigate = useNavigate()

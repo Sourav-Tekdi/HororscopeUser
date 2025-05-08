@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom"
-import Helpers from "../../Helpers/Helpers"
+import Helpers from "../../../Helpers/Helpers"
 import { useEffect, useState } from "react"
-import Notification from '../../Helpers/Notification'
+import Notification from '../../../Helpers/Notification'
 import moment from "moment"
 import Faq from "../../components/Faq"
 import Breadcrum from "../../components/Breadcrum"

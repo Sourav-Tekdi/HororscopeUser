@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Slider from 'react-slick';
-import Notification from '../../src/Helpers/Notification';
-import Helpers from '../../src/Helpers/Helpers';
+import Notification from '../../../src/Helpers/Notification';
+import Helpers from '../../../src/Helpers/Helpers';
 
 const Register = ({ title }) => {
     const helpers = Helpers();

@@ -6,7 +6,7 @@ import Helpers from '../../Helpers/Helpers'
 import Breadcrum from '../components/Breadcrum'
 import { useProfile } from '../context/ProfileContext'
 import Notification from '../../Helpers/Notification'
-import { clearCart } from '../redux/actions/cartActions'
+import { clearCart } from '../../redux/actions/cartActions'
 import { useDispatch } from 'react-redux'
 
 const RechargePlanDetails = ({ title }) => {

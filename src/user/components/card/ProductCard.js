@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { addToCart } from '../../redux/actions/cartActions' // Action for adding to the cart
+import { addToCart } from '../../../redux/actions/cartActions' // Action for adding to the cart
 import { useDispatch, useSelector } from 'react-redux'
 
 const ProductCard = ({ product, column = 3 }) => {

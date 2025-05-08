@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react"
-import Helpers from "../../Helpers/Helpers"
-import { useNavigate } from "react-router-dom"
+import Helpers from "../../../Helpers/Helpers"
 import Breadcrum from "../../components/Breadcrum"
-import { useProfile } from "../../context/ProfileContext"
 
 const KundliReportComponent = ({ title }) => {
     const helpers = Helpers()

@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef, useCallback } from "react"
-import Helpers from "../../Helpers/Helpers"
+import Helpers from "../../../Helpers/Helpers"
 import AstrologerCard from "../../components/AstrologerCard"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import Breadcrum from "../../components/Breadcrum"

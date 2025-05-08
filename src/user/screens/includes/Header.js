@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import CartComponent from '../../../components/CartComponent';
-import SettingsComponent from '../../../components/SettingsComponent';
-import Menu from '../../../components/Menu';
+import CartComponent from '../../components/CartComponent';
+import SettingsComponent from '../../components/SettingsComponent';
+import Menu from '../../components/Menu';
 import { useAuth } from '../../context/AuthContext';
 import { useProfile } from '../../context/ProfileContext';
 

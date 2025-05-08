@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import Helpers from "../../Helpers/Helpers"
+import Helpers from "../../../Helpers/Helpers"
 import ProductCard from "../../components/card/ProductCard"
 import { useLocation, useNavigate } from "react-router-dom"
 import Pagination from "../../components/Pagination"

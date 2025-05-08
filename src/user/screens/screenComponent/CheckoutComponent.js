@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import Helpers from "../../Helpers/Helpers";
+import Helpers from "../../../Helpers/Helpers";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Breadcrum from "../../components/Breadcrum";
-import Notification from "../../Helpers/Notification";
-import { clearCart } from "../../redux/actions/cartActions";
+import Notification from "../../../Helpers/Notification";
+import { clearCart } from "../../../redux/actions/cartActions";
 
 const CheckoutComponent = ({ title }) => {
     const dispatch = useDispatch()

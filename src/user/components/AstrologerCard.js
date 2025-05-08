@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import Helpers from '../Helpers/Helpers'
-import Notification from '../Helpers/Notification'
+import Helpers from '../../Helpers/Helpers'
+import Notification from '../../Helpers/Notification'
 
 const AstrologerCard = ({ astrologer, column = 4 }) => {
     const navigate = useNavigate();

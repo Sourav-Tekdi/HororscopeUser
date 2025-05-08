@@ -3,7 +3,7 @@ import Header from './includes/Header'
 import { useProfile } from '../context/ProfileContext';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import ProfileSchema  from '../validation/ProfileSchema';
-import Helpers from '../Helpers/Helpers';
+import Helpers from '../../Helpers/Helpers';
 
 
 const Profile = ({ title }) => {

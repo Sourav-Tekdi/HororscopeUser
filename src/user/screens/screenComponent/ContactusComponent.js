@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import * as Yup from 'yup'
-import Notification from '../../Helpers/Notification'
-import Helpers from '../../Helpers/Helpers'
+import Notification from '../../../Helpers/Notification'
+import Helpers from '../../../Helpers/Helpers'
 
 const ContactusComponent = () => {
     const helpers = Helpers()

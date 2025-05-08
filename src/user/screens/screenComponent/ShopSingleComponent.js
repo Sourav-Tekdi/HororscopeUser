@@ -1,11 +1,11 @@
 import { useNavigate, useParams } from "react-router-dom"
 import PopularProducts from "../../components/PopularProducts"
-import Helpers from "../../Helpers/Helpers"
+import Helpers from "../../../Helpers/Helpers"
 import { useEffect, useState } from "react"
-import Notification from '../../Helpers/Notification'
+import Notification from '../../../Helpers/Notification'
 import Breadcrum from "../../components/Breadcrum"
 import { useDispatch, useSelector } from "react-redux"
-import { addToCart } from "../../redux/actions/cartActions"
+import { addToCart } from "../../../redux/actions/cartActions"
 
 
 const ShopSingleComponent = ({ title }) => {

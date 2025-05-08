@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Helpers from '../Helpers/Helpers'
+import Helpers from '../../Helpers/Helpers'
 import { Link } from 'react-router-dom'
 import moment from "moment"
 

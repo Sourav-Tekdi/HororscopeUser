@@ -6,7 +6,7 @@ const NotProtectedRoute = ({ children }) => {
     const { isAuthenticated } = useAuth();
 
     if (isAuthenticated) {
-        return <Navigate to="/" replace />;
+        return <Navigate to="/astrologer" replace />;
     }
 
     return children;

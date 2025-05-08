@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { removeFromCart } from '../redux/actions/cartActions'
+import { removeFromCart } from '../../redux/actions/cartActions'
 
 const CartComponent = () => {
     const [isCartOpen, setIsCartOpen] = useState(false)

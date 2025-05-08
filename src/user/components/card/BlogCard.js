@@ -1,7 +1,7 @@
 import React from 'react'
 import moment from "moment"
 import { Link } from 'react-router-dom'
-import Helpers from '../../Helpers/Helpers'
+import Helpers from '../../../Helpers/Helpers'
 
 const BlogCard = ({ blog }) => {
     const helpers = Helpers()
