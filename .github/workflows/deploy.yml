@@ -22,7 +22,6 @@ jobs:
         rm -f package-lock.json
         npm install
         CI=false npm run build
-    
     - name: Setup SSH
       uses: webfactory/ssh-agent@v0.8.0
       with:
