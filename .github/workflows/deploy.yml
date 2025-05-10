@@ -31,8 +31,16 @@ jobs:
     - name: Deploy to Hostinger
       run: |
         ssh -o StrictHostKeyChecking=no root@69.62.78.171 '
-          cd /root/HororscopeUser && \
-          rm -rf * && \
-          exit
-        '
-        scp -o StrictHostKeyChecking=no -r build/* root@69.62.78.171:/root/HororscopeUser 
+              cd /root/HororscopeUser && \
+              rm -rf * && \
+              exit
+            '
+            scp -o StrictHostKeyChecking=no -r build/* root@69.62.78.171:/root/HororscopeUser
+            scp -o StrictHostKeyChecking=no Dockerfile root@69.62.78.171:/root/HororscopeUser
+            ssh -o StrictHostKeyChecking=no root@69.62.78.171 '
+              cd /root/HororscopeUser && \
+              docker build -t horoscope-app . && \
+              docker stop horoscope-container || true && \
+              docker rm horoscope-container || true && \
+              docker run -d -p 80:80 --name horoscope-container --restart always horoscope-app
+            '

@@ -16,7 +16,7 @@ const DashboardComponent = () => {
                     <div className="row">
                         <div className="col-lg-12 text-center">
                             <h1 className="as_heading as_heading_center">
-                                our services
+                                our servicessss
                             </h1>
                             <p className="as_font14 as_padderTop20 as_padderBottom20">
                                 Consectetur adipiscing elit, sed do eiusmod tempor incididuesdeentiut labore
