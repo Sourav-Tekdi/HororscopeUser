@@ -17,11 +17,10 @@ jobs:
         node-version: '18'
         cache: 'npm'
     
-    - name: Install Dependencies
+    - name: Install Dependencies and Build
       run: |
-        rm -f package-lock.json
-        npm install
-        CI=false npm run build
+        npm ci
+        npm run build
         
     - name: Setup SSH
       uses: webfactory/ssh-agent@v0.8.0
@@ -30,17 +29,13 @@ jobs:
     
     - name: Deploy to Hostinger
       run: |
+        # Copy only necessary files
+        scp -o StrictHostKeyChecking=no -r build/* root@69.62.78.171:/root/HororscopeUser
+        scp -o StrictHostKeyChecking=no Dockerfile docker-compose.yml root@69.62.78.171:/root/HororscopeUser
+        
+        # Deploy using docker-compose
         ssh -o StrictHostKeyChecking=no root@69.62.78.171 '
-              cd /root/HororscopeUser && \
-              rm -rf * && \
-              exit
-            '
-            scp -o StrictHostKeyChecking=no -r build/* root@69.62.78.171:/root/HororscopeUser
-            scp -o StrictHostKeyChecking=no Dockerfile root@69.62.78.171:/root/HororscopeUser
-            ssh -o StrictHostKeyChecking=no root@69.62.78.171 '
-              cd /root/HororscopeUser && \
-              docker build -t horoscope-app . && \
-              docker stop horoscope-container || true && \
-              docker rm horoscope-container || true && \
-              docker run -d -p 80:80 --name horoscope-container --restart always horoscope-app
-            '
+          cd /root/HororscopeUser && \
+          docker-compose down || true && \
+          docker-compose up -d --build
+        '
