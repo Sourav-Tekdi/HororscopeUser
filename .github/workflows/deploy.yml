@@ -36,3 +36,9 @@ jobs:
           chmod +x docker.sh && \
           ./docker.sh
         '
+
+    - name: Check Docker containers
+      run: docker ps -a
+
+    - name: Check Docker images
+      run: docker images
