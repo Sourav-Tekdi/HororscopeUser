@@ -8,7 +8,6 @@ BRANCH="main"
 # Optional: Clean up old source directory (be careful with rm -rf *)
 # rm -rf $PROJECT_DIR/source
 
-
 # Pull the latest code (if you want to clone, uncomment below)
 # git clone -b $BRANCH $REPO_URL $PROJECT_DIR/source
 # Or, if code is already present, just pull latest
