@@ -19,8 +19,15 @@ if [ -f Dockerfile ]; then
   docker build -t horoscope-app:latest .
 fi
 
-# Start containers with docker-compose
-docker-compose up -d --force-recreate --no-deps
+# Try to run with docker-compose if available
+if command -v docker-compose &> /dev/null; then
+  docker-compose up -d --force-recreate --no-deps
+else
+  # Fallback to docker run if docker-compose is not available
+  docker stop horoscope-app || true
+  docker rm horoscope-app || true
+  docker run -d -p 5544:80 --name horoscope-app --restart always horoscope-app:latest
+fi
 
 # Clean up dangling images
 docker images --no-trunc -aqf "dangling=true" | xargs -r docker rmi
@@ -28,4 +35,10 @@ docker images --no-trunc -aqf "dangling=true" | xargs -r docker rmi
 # Restart nginx if needed
 if command -v nginx >/dev/null 2>&1; then
   sudo nginx -t && sudo systemctl restart nginx
+fi
+
+# Install Docker Compose if not present
+if ! command -v docker-compose &> /dev/null; then
+  sudo curl -L "https://github.com/docker/compose/releases/download/v2.21.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  sudo chmod +x /usr/local/bin/docker-compose
 fi 

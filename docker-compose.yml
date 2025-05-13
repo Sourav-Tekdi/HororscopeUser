@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  app:
+    image: horoscope-app:latest
+    ports:
+      - "5544:80"
+    restart: always 
