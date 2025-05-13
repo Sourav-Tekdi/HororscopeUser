@@ -29,14 +29,9 @@ jobs:
     
     - name: Deploy to Hostinger
       run: |
-        # Copy only necessary files
-        scp -o StrictHostKeyChecking=no -r build/* root@69.62.78.171:/root/HororscopeUser
-        scp -o StrictHostKeyChecking=no Dockerfile docker-compose.yml root@69.62.78.171:/root/HororscopeUser
-        
-        
-        # Deploy using docker-compose
+        scp -o StrictHostKeyChecking=no docker.sh root@69.62.78.171:/root/HororscopeUser/
         ssh -o StrictHostKeyChecking=no root@69.62.78.171 '
           cd /root/HororscopeUser && \
-          docker-compose down || true && \
-          docker-compose up -d --build
+          chmod +x docker.sh && \
+          ./docker.sh
         '
