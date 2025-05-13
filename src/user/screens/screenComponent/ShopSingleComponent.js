@@ -69,7 +69,7 @@ const ShopSingleComponent = ({ title }) => {
                                 </div> */}
                                 <div className="as_shopsingle_for">
                                     <div className="as_prod_img">
-                                        <img alt="Product image" className="img-responsive" src={product?.full_image} />
+                                        <img alt={product?.title || "Product"} className="img-responsive" src={product?.full_image} />
                                     </div>
 
                                 </div>
@@ -91,7 +91,7 @@ const ShopSingleComponent = ({ title }) => {
                                 </h2>
                                 <div className="product_rating as_padderBottom10">
                                     <span className="rating_star">
-                                        <img alt="" src="/assets/images/rating.png" />
+                                        <img alt="Rating stars" src="/assets/images/rating.png" />
                                         <span>
                                             {/* (20 customer review) */}
                                         </span>
@@ -108,17 +108,17 @@ const ShopSingleComponent = ({ title }) => {
                                         Quantity :
                                         <div className="quantity">
                                             <button className="qty_button minus" type="button">
-                                                <img alt="" src="/assets/images/svg/arrow_down.svg" />
+                                                <img alt="Decrease quantity" src="/assets/images/svg/arrow_down.svg" />
                                             </button>
                                             <input className="input-text form-control qty text" id="quantity_6041ce9eca5d6" inputMode="numeric" max="100" min="1" name="quantity" step="1" title="Qty" type="text" value="1" readOnly />
                                             <button className="qty_button plus" type="button">
-                                                <img alt="" src="/assets/images/svg/arrow_up.svg" />
+                                                <img alt="Increase quantity" src="/assets/images/svg/arrow_up.svg" />
                                             </button>
                                         </div>
                                     </div>
                                     <button onClick={() => handleAddToCart(product)} className="buy_btn as_btn" type="button" value="Buy Now">
                                         <span>
-                                            <img alt="" src="/assets/images/svg/cart.svg" />
+                                            <img alt="Shopping cart" src="/assets/images/svg/cart.svg" />
                                         </span>
                                         add to cart
                                     </button>
