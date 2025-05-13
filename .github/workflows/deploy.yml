@@ -29,6 +29,7 @@ jobs:
     
     - name: Deploy to Hostinger
       run: |
+        ssh -o StrictHostKeyChecking=no root@69.62.78.171 'mkdir -p /root/HororscopeUser'
         scp -o StrictHostKeyChecking=no docker.sh root@69.62.78.171:/root/HororscopeUser/
         ssh -o StrictHostKeyChecking=no root@69.62.78.171 '
           cd /root/HororscopeUser && \
