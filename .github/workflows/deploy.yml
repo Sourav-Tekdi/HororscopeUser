@@ -33,6 +33,7 @@ jobs:
         scp -o StrictHostKeyChecking=no -r build/* root@69.62.78.171:/root/HororscopeUser
         scp -o StrictHostKeyChecking=no Dockerfile docker-compose.yml root@69.62.78.171:/root/HororscopeUser
         
+        
         # Deploy using docker-compose
         ssh -o StrictHostKeyChecking=no root@69.62.78.171 '
           cd /root/HororscopeUser && \
