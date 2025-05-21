@@ -1,44 +1,44 @@
-name: Deploy to Hostinger
+# name: Deploy to Hostinger
 
-on:
-  push:
-    branches: [ main ]
+# on:
+#   push:
+#     branches: [ main ]
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
     
-    steps:
-    - uses: actions/checkout@v3
+#     steps:
+#     - uses: actions/checkout@v3
     
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-        cache: 'npm'
+#     - name: Setup Node.js
+#       uses: actions/setup-node@v3
+#       with:
+#         node-version: '18'
+#         cache: 'npm'
     
-    - name: Install Dependencies and Build
-      run: |
-        npm ci
-        npm run build
+#     - name: Install Dependencies and Build
+#       run: |
+#         npm ci
+#         npm run build
         
-    - name: Setup SSH
-      uses: webfactory/ssh-agent@v0.8.0
-      with:
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+#     - name: Setup SSH
+#       uses: webfactory/ssh-agent@v0.8.0
+#       with:
+#         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
     
-    - name: Deploy to Hostinger
-      run: |
-        ssh -o StrictHostKeyChecking=no root@69.62.78.171 'mkdir -p /root/HororscopeUser'
-        scp -o StrictHostKeyChecking=no docker.sh root@69.62.78.171:/root/HororscopeUser/
-        ssh -o StrictHostKeyChecking=no root@69.62.78.171 '
-          cd /root/HororscopeUser && \
-          chmod +x docker.sh && \
-          ./docker.sh
-        '
+#     - name: Deploy to Hostinger
+#       run: |
+#         ssh -o StrictHostKeyChecking=no root@69.62.78.171 'mkdir -p /root/HororscopeUser'
+#         scp -o StrictHostKeyChecking=no docker.sh root@69.62.78.171:/root/HororscopeUser/
+#         ssh -o StrictHostKeyChecking=no root@69.62.78.171 '
+#               cd /root/HororscopeUser && \
+#           chmod +x docker.sh && \
+#           ./docker.sh
+#         '
 
-    - name: Check Docker containers
-      run: docker ps -a
+#     - name: Check Docker containers
+#       run: docker ps -a
 
-    - name: Check Docker images
-      run: docker images
+#     - name: Check Docker images
+#       run: docker images

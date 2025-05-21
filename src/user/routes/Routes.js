@@ -36,13 +36,13 @@ const RoutesComponent = () => {
                 <AuthProvider>
                     <Router basename="/">
                         <Routes>
-                            <Route exact path="/" element={<NotProtectedRoute><Dashboard title='Dashboard' /></NotProtectedRoute>} />
+                            <Route path="/" element={<Dashboard title='Dashboard' />} />
 
                             <Route path="/login" element={<NotProtectedRoute><Login title="Login" /></NotProtectedRoute>} />
                             <Route path="/register" element={<NotProtectedRoute><Register title="Register" /></NotProtectedRoute>} />
                             <Route path="/chat/:id" element={<ProtectedRoute><Chat title="Chat" /></ProtectedRoute>} />
                             <Route path="/profile" element={<ProtectedRoute><Profile title="Profile" /></ProtectedRoute>} />
-                            <Route exact path="/" element={<Dashboard title="Dashboard" />} />
+                            {/* <Route exact path="/" element={<Dashboard title="Dashboard" />} /> */}
                             <Route path="/products" element={<Shop title="Shop" />} />
                             <Route path="/products/view/:id" element={<ShopSingle title="Product View" />} />
                             <Route path="/blogs" element={<Blog title="Blogs" />} />

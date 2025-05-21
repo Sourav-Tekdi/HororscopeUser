@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 import Notification from '../../../Helpers/Notification'
 import Breadcrum from "../../components/Breadcrum"
 import { useDispatch, useSelector } from "react-redux"
-import { addToCart } from "../../../redux/actions/cartActions"
+import { addToCart } from "../../features/cart/cartSlice"
 
 
 const ShopSingleComponent = ({ title }) => {
@@ -16,13 +16,13 @@ const ShopSingleComponent = ({ title }) => {
     const [loading, setLoading] = useState(true)
     const [product, setProduct] = useState(null) // Store the product data
     const dispatch = useDispatch()
-    const cartItems = useSelector(state => state.cart.cartItems)
+    const cartItems = useSelector(state => state.cart.items)
 
 
     const handleAddToCart = () => {
         // Check if the product is already in the cart
 
-        const isProductInCart = cartItems.some(item => item.id === product.id)
+        const isProductInCart = cartItems.some(item => item._id === product._id)
 
         if (!isProductInCart) {
             dispatch(addToCart(product)) // Dispatch action to add product to cart
@@ -116,7 +116,7 @@ const ShopSingleComponent = ({ title }) => {
                                             </button>
                                         </div>
                                     </div>
-                                    <button onClick={() => handleAddToCart(product)} className="buy_btn as_btn" type="button" value="Buy Now">
+                                    <button onClick={() => handleAddToCart()} className="buy_btn as_btn" type="button" value="Buy Now">
                                         <span>
                                             <img alt="Shopping cart" src="/assets/images/svg/cart.svg" />
                                         </span>

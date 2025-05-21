@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { removeFromCart } from '../../redux/actions/cartActions'
+import { removeFromCart } from '../features/cart/cartSlice'
 
 const CartComponent = () => {
     const [isCartOpen, setIsCartOpen] = useState(false)
@@ -11,8 +11,8 @@ const CartComponent = () => {
         setIsCartOpen(!isCartOpen)
     }
 
-    // Mock Redux cartItems data
-    const cartItems = useSelector((state) => state.cart.cartItems) || []
+    // Updated Redux cartItems data path
+    const cartItems = useSelector((state) => state.cart.items) || []
 
     const cartCount = cartItems.length
 

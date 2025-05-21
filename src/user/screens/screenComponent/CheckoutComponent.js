@@ -4,12 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Breadcrum from "../../components/Breadcrum";
 import Notification from "../../../Helpers/Notification";
-import { clearCart } from "../../../redux/actions/cartActions";
+import { clearCart } from "../../features/cart/cartSlice";
 
 const CheckoutComponent = ({ title }) => {
     const dispatch = useDispatch()
     const helpers = Helpers();
-    const cartItems = useSelector((state) => state.cart.cartItems) || [];
+    const cartItems = useSelector((state) => state.cart.items) || [];
     const [loading, setLoading] = useState(false);
     const [paymentMethod, setPaymentMethod] = useState("cod"); // State to track selected payment method
     const navigate = useNavigate();

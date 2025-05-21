@@ -1,17 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { addToCart } from '../../../redux/actions/cartActions' // Action for adding to the cart
+import { addToCart } from '../../../user/features/cart/cartSlice' // Updated import path
 import { useDispatch, useSelector } from 'react-redux'
 
 const ProductCard = ({ product, column = 3 }) => {
     const dispatch = useDispatch()
 
-    // Access the cart items from the Redux state
-    const cartItems = useSelector(state => state.cart.cartItems)
+    // Access the cart items from the Redux state with correct path
+    const cartItems = useSelector(state => state.cart?.items || [])
 
     const handleAddToCart = () => {
         // Check if the product is already in the cart
-        const isProductInCart = cartItems.some(item => item.id === product.id)
+        const isProductInCart = cartItems.some(item => item._id === product._id)
 
         if (!isProductInCart) {
             dispatch(addToCart(product)) // Dispatch action to add product to cart
